@@ -4,7 +4,8 @@
     <title>Clover Club Video Manager</title>
     <link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="libs/jquery-1.10.2.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!--<link rel="stylesheet" href="styles/theme.min">-->
+    <link rel="stylesheet" href="styles/jquery-ui.min.css"/>
     <link href="styles/styles.css" rel="stylesheet" />
 
 </head>
@@ -32,7 +33,8 @@
                 </div>
             </div>
         </div>
-        <div class="row empty"></div>
+
+        <!--<div class="row empty"></div>-->
         <div class="row main">
             <div class="col-md-3 div"></div>
             <div class="col-lg-6">
@@ -122,6 +124,8 @@
                 revert: "invalid"
             });
             $("ul, li").disableSelection();
+
+            $( "#accordion" ).accordion();
         });
     </script>
 

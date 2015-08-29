@@ -1,6 +1,7 @@
 ﻿#main-container {
-    border: 3px solid black;
-    height: 700px;
+    border: 3px inset slategray;
+    border-radius: 8px;
+    height: 600px;
 }
 
 .login-div {
@@ -42,3 +43,7 @@
 ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; border-radius: 15px;}
 
 li { margin: 10px; padding: 10px; border-radius: 15px; }
+
+.demoHeaders {
+    margin-top: 2em;
+}
