@@ -67,9 +67,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="main.html" />
-    <Content Include="scripts.js" />
-    <Content Include="styles.css" />
+    <Content Include="index.html" />
+    <Content Include="scripts\scripts.js" />
+    <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
