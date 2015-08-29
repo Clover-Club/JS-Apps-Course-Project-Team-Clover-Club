@@ -4,7 +4,7 @@
         $('.buttons').show();
         $('.main').hide();
         $('.contacts').hide();
-        $('.empty').css('height', '150px'),
+        $('.empty').css('height', '150px');
         $('.register').hide();
         $('.logged-user').hide();
     });
@@ -14,7 +14,7 @@
         $('.buttons').hide();
         $('.main').hide();
         $('.contacts').show();
-        $('.empty').css('height', '100px'),
+        $('.empty').css('height', '100px');
         $('.register').hide();
         $('.logged-user').hide();
     });

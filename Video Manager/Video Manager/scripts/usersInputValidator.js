@@ -12,5 +12,5 @@ var validator = (function() {
 
     return {
     	registerPassword: registerPassword
-    }
+    };
 }());

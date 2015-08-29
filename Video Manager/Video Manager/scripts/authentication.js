@@ -12,8 +12,6 @@ var authentication = (function () {
         $('#on-start').hide();
         $('#user-name').text(data.username);
         $('#greeting-span').text(data.username);
-        //console.log(data);
-        // TODO: relocate to user videos page
     }
 
     function authenticationFailed(error) {
@@ -33,8 +31,6 @@ var authentication = (function () {
         $('#on-start').hide();
         $('#user-name').text($('#username').val());
         $('#greeting-span').text($('#username').val());
-        //console.log(data);
-        // TODO: relocate to user videos page
     }
 
     function login() {
@@ -56,5 +52,5 @@ var authentication = (function () {
     return {
         login: login,
         register: register
-    }
+    };
 }());
