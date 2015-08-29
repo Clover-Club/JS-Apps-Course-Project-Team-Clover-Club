@@ -10,7 +10,7 @@ Please define and implement the following assets in your project:
         - Both Prototypal and classical inheritances are Ok
     - At least 3 modules
     - At least 7 types of objects
--Unit tests
+- Unit tests
     - Using Mocha, Chai and SinonJS
 - Implement a UI for your application
     - Use KendoUI, jQueryUI or implement your own UI logic
@@ -37,7 +37,7 @@ Follow the best practices for producing high-quality code:
 
 - Correct naming
 - Data encapsulation
-- Use OOP and modules
+    - Use OOP and modules
 - Strong cohesion and loose coupling
 - Use GIT as a source control system
 - Host it on http://github.com
@@ -49,4 +49,4 @@ If you have a chance, time and a suitable situation, you might add some of the f
 - Backward compatibility (make the application usable on browsers like IE8, IE7 and IE6)
 - Integration tests
 - Usage of a structural JavaScript framework:
-- AngularJS, KendoUI, Knockout.js, Backbone.js, etc...
+    - AngularJS, KendoUI, Knockout.js, Backbone.js, etc...
