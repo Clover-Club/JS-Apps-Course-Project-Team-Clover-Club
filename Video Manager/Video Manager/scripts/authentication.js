@@ -12,7 +12,7 @@ var authentication = (function() {
 
     function login() {
         var username = $('#usr').val(),
-            password = $('pwd').val();
+            password = $('#pwd').val();
 
         ajaxRequester.login(username, password, authenticationSuccess, authenticationFailed);
     }
