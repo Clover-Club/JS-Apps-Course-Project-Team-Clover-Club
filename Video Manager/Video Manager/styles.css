@@ -1,0 +1,33 @@
+﻿#main-container {
+    border: 3px solid black;
+    height: 700px;
+}
+
+.login-div {
+    display: none;
+}
+
+.buttons {
+    display: none;
+    text-align: center;
+}
+
+.contacts {
+    display: none;
+}
+
+.btn {
+    display: inline-block;
+}
+
+.h2 {
+    text-align: center;
+}
+
+.h4 {
+    display: inline-block;
+}
+
+.row a {
+    float: right;
+}
