@@ -1,19 +1,33 @@
 var authentication = (function() {
-    $('#login-btn').on('click', login);
+
+    function authenticationSuccess(data) {
+        console.log(data);
+        // TODO: relocate to user videos page
+    }
+
+    function authenticationFailed(error) {
+        console.log(error);
+        // TODO: error message
+    }
 
     function login() {
-    	var username = $('#usr').val();
-    	var password = $('pwd').val();
+        var username = $('#usr').val(),
+            password = $('pwd').val();
 
-    	ajaxRequester.login(username, password, authenticationPassed, authenticationFailed);
+        ajaxRequester.login(username, password, authenticationSuccess, authenticationFailed);
+    }
 
-    	// TODO: Change this later
-    	function authenticationPassed(data) {
-    		console.log(data);
-    	}
+    function register() {
+        if (validator.registerPassword) {
+            var username = $('#email').val(),
+                password = $('#pass').val();
 
-    	function authenticationFailed(error) {
-    		console.log(error);
-    	}
+            ajaxRequester.register(username, password, authenticationSuccess, authenticationFailed);
+        }
+    }
+
+    return {
+        login: login,
+        register: register
     }
 }());
