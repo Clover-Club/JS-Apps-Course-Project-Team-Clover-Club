@@ -37,4 +37,5 @@
     });
 
     $('#login-btn').on('click', authentication.login);
+    $('#register-form-btn').on('click', authentication.register);
 }());

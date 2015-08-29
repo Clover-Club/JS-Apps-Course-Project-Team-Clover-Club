@@ -19,7 +19,7 @@ var authentication = (function() {
 
     function register() {
         if (validator.registerPassword) {
-            var username = $('#email').val(),
+            var username = $('#username').val(),
                 password = $('#pass').val();
 
             ajaxRequester.register(username, password, authenticationSuccess, authenticationFailed);
