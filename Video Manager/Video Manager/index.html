@@ -21,7 +21,7 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse navbar-menubuilder">
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right" id="on-start">
                             <li>
                                 <a href="#" id="login">Login/Register</a>
                             </li>
@@ -29,12 +29,20 @@
                                 <a href="#" id="contacts">Contact Us</a>
                             </li>
                         </ul>
+                        <ul class="nav navbar-nav navbar-right" id="on-log">
+                            <li>
+                                <a href="#" id="user-name">Username</a>
+                            </li>
+                            <li>
+                                <a href="#" id="logout">Logout</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--<div class="row empty"></div>-->
+        <div class="row empty"></div>
         <div class="row main">
             <div class="col-md-3 div"></div>
             <div class="col-lg-6">
@@ -73,7 +81,7 @@
                 <ul id="sortable">
                     <li class="ui-state-default">
                         <div class="h4">Adrian Bozhankov</div>
-                        <a href="">profile in GitHub</a></li>
+                        <a href="https://github.com/AdrianBozhankov">profile in GitHub</a></li>
                     <li class="ui-state-default">
                         <div class="h4">Ivan Vasilev</div>
                         <a href="https://github.com/ivanvasilev">profile in GitHub</a></li>
@@ -111,6 +119,38 @@
                 </form>
             </div>
             <div class="col-md-3 div"></div>
+        </div>
+        <div class="row logged-user">
+            <div class="row">
+                <div id="greeting" class="col-md-3"><h3 class="h3">Hello, <span id="greeting-span"></span></h3></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <label for="add-video">Add new video:</label>
+                    <input type="text" class="form-control" id="add-video" placeholder="Enter video url here">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row empty"></div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <p>Music:</p>
+                    <ul id="music-videos">
+                        <li>Video 1</li>
+                    </ul>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <p>Telerik videos:</p>
+                    <ul id="telerik-videos"></ul>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
         </div>
     </div>
     <script>

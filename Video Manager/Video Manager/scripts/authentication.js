@@ -1,7 +1,18 @@
-var authentication = (function() {
+var authentication = (function () {
 
-    function authenticationSuccess(data) {
-        console.log(data);
+    function authenticationSuccessForLogin(data) {
+        $('.login-div').hide();
+        $('.buttons').hide();
+        $('.main').hide();
+        $('.contacts').hide();
+        $('.empty').css('height', '50px');
+        $('.register').hide();
+        $('.logged-user').show();
+        $('#on-log').show();
+        $('#on-start').hide();
+        $('#user-name').text(data.username);
+        $('#greeting-span').text(data.username);
+        //console.log(data);
         // TODO: relocate to user videos page
     }
 
@@ -10,11 +21,27 @@ var authentication = (function() {
         // TODO: error message
     }
 
+    function authenticationSuccessForRegistering(data) {
+        $('.login-div').hide();
+        $('.buttons').hide();
+        $('.main').hide();
+        $('.contacts').hide();
+        $('.empty').css('height', '50px');
+        $('.register').hide();
+        $('.logged-user').show();
+        $('#on-log').show();
+        $('#on-start').hide();
+        $('#user-name').text($('#username').val());
+        $('#greeting-span').text($('#username').val());
+        //console.log(data);
+        // TODO: relocate to user videos page
+    }
+
     function login() {
         var username = $('#usr').val(),
             password = $('#pwd').val();
 
-        ajaxRequester.login(username, password, authenticationSuccess, authenticationFailed);
+        ajaxRequester.login(username, password, authenticationSuccessForLogin, authenticationFailed);
     }
 
     function register() {
@@ -22,7 +49,7 @@ var authentication = (function() {
             var username = $('#username').val(),
                 password = $('#pass').val();
 
-            ajaxRequester.register(username, password, authenticationSuccess, authenticationFailed);
+            ajaxRequester.register(username, password, authenticationSuccessForRegistering, authenticationFailed);
         }
     }
 
