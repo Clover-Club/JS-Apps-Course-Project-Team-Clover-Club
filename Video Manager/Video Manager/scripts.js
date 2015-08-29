@@ -13,3 +13,11 @@ $('#contacts').click(function () {
     $('.contacts').show();
     $('.empty').css('height', '100px')
 });
+
+$('#home').click(function () {
+    $('.login-div').hide();
+    $('.buttons').hide();
+    $('.main').show();
+    $('.contacts').hide();
+    $('.empty').css('height', '200px')
+});

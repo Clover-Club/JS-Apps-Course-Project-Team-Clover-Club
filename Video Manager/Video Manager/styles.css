@@ -31,3 +31,7 @@
 .row a {
     float: right;
 }
+
+.empty{
+    height: 200px;
+}
