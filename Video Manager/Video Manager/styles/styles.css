@@ -3,7 +3,7 @@
     height: 700px;
 }
 
-#on-log{
+#on-log {
     display: none;
 }
 
@@ -70,8 +70,18 @@ li {
     border-radius: 15px;
 }
 
-#music-videos li{
+#music-videos li {
     height: 80px;
     width: 120px;
     border: 1px solid black;
 }
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+#add-dd {
+    display: block;
+    margin-bottom: 10px;
+}
+

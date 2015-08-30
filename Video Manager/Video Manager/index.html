@@ -5,7 +5,7 @@
     <link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="libs/jquery-1.10.2.min.js"></script>
     <!--<link rel="stylesheet" href="styles/theme.min">-->
-    <link rel="stylesheet" href="styles/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="styles/jquery-ui.min.css" />
     <link href="styles/styles.css" rel="stylesheet" />
 
 </head>
@@ -81,16 +81,20 @@
                 <ul id="sortable">
                     <li class="ui-state-default">
                         <div class="h4">Adrian Bozhankov</div>
-                        <a href="https://github.com/AdrianBozhankov">profile in GitHub</a></li>
+                        <a href="https://github.com/AdrianBozhankov">profile in GitHub</a>
+                    </li>
                     <li class="ui-state-default">
                         <div class="h4">Ivan Vasilev</div>
-                        <a href="https://github.com/ivanvasilev">profile in GitHub</a></li>
+                        <a href="https://github.com/ivanvasilev">profile in GitHub</a>
+                    </li>
                     <li class="ui-state-default">
                         <div class="h4">Ivaylo Andonov</div>
-                        <a href="https://github.com/IvayloAndonov">profile in GitHub</a></li>
+                        <a href="https://github.com/IvayloAndonov">profile in GitHub</a>
+                    </li>
                     <li class="ui-state-default">
                         <div class="h4">Rodoteya Yordanova</div>
-                        <a href="https://github.com/RYordanova">profile in GitHub</a></li>
+                        <a href="https://github.com/RYordanova">profile in GitHub</a>
+                    </li>
                 </ul>
 
             </div>
@@ -128,7 +132,13 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <label for="add-video">Add new video:</label>
+                    <select id="add-dd">
+                        <option value="music">Music</option>
+                        <option value="telerik">Telerik videos</option>
+                    </select>
+                    <input type="text" class="form-control" id="add-video-title" placeholder="Enter video title here">
                     <input type="text" class="form-control" id="add-video" placeholder="Enter video url here">
+                    <button id="add-form-btn">Add</button>
                 </div>
                 <div class="col-md-3"></div>
             </div>
@@ -165,18 +175,22 @@
             });
             $("ul, li").disableSelection();
 
-            $( "#accordion" ).accordion();
+            $("#accordion").accordion();
         });
     </script>
 
     <!--Libs-->
     <script src="libs/jquery/dist/jquery.js"></script>
     <script src="libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="libs/underscore/underscore.js"></script>
+    <script src="libs/underscore/underscore-min.js"></script>
 
     <!--Scripts-->
     <script src="scripts/authentication.js"></script>
     <script src="scripts/ajaxRequester.js"></script>
     <script src="scripts/usersInputValidator.js"></script>
+    <script src="scripts/videoStorage.js"></script>
+    <script src="scripts/video.js"></script>
     <script src="scripts/start.js"></script>
 
     <!--TODO: Use SystemJs to import the files above-->

@@ -51,6 +51,31 @@
         $('#on-start').show();
     });
 
+    $('#add-form-btn').click(function () {
+        function fillVideos(container, videoCategory) {
+            var resultHTML = '';
+            var videos = videoStorage.getVideosByCategory(videoCategory);
+            for (var i = 0; i < videos.length; i++) {
+                resultHTML += '<li>' +
+                        videos[i].getTitle() +
+                        '</li>';
+            }
+
+            document.getElementById(container).innerHTML = resultHTML;
+        }
+
+        var videoContainers = { "music": "music-videos", "telerik": "telerik-videos" };
+        var title = $("#add-video-title").val();
+        var url = $("#add-video").val();
+        var category = $("#add-dd").val();
+        var video = new Video({ title: title, url: url, category: category });
+        videoStorage.addVideo(video);
+
+        var container = videoContainers[category];
+
+        fillVideos(container, category);
+    })
+
     $('#login-btn').on('click', authentication.login);
     $('#register-form-btn').on('click', authentication.register);
 }());
