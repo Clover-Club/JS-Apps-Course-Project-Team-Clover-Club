@@ -70,7 +70,7 @@ li {
     border-radius: 15px;
 }
 
-#music-videos li {
+#music-videos li , #telerik-videos li{
     height: 80px;
     width: 120px;
     border: 1px solid black;
@@ -85,3 +85,6 @@ li {
     margin-bottom: 10px;
 }
 
+iframe {
+    width: 100%;
+}

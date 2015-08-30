@@ -51,31 +51,39 @@
         $('#on-start').show();
     });
 
-    $('#add-form-btn').click(function () {
-        function fillVideos(container, videoCategory) {
-            var resultHTML = '';
-            var videos = videoStorage.getVideosByCategory(videoCategory);
-            for (var i = 0; i < videos.length; i++) {
-                resultHTML += '<li>' +
-                        videos[i].getTitle() +
-                        '</li>';
-            }
-
-            document.getElementById(container).innerHTML = resultHTML;
+    var videoContainersIDs = { "music": "music-videos", "telerik": "telerik-videos" };
+    function fillVideos(container, videoCategory) {
+        var resultHTML = '';
+        var videos = videoStorage.getVideosByCategory(videoCategory);
+        for (var i = 0; i < videos.length; i++) {
+            var url = videos[i].getUrl();
+            resultHTML += '<li><iframe src="' + url + '" frameborder="0" ></iframe></li>';
         }
 
-        var videoContainers = { "music": "music-videos", "telerik": "telerik-videos" };
+        $('#' + container).append($(resultHTML));
+    }
+
+    $('#add-form-btn').click(function () {
         var title = $("#add-video-title").val();
         var url = $("#add-video").val();
+        url = url.replace("watch?v=", "embed/");
         var category = $("#add-dd").val();
         var video = new Video({ title: title, url: url, category: category });
         videoStorage.addVideo(video);
 
-        var container = videoContainers[category];
+        var container = videoContainersIDs[category];
 
-        fillVideos(container, category);
+        $('#' + container).append($('<li><iframe src="' + url + '" frameborder="0" ></iframe></li>'));
     })
 
-    $('#login-btn').on('click', authentication.login);
+    $('#login-btn').on('click', function () {
+        authentication.login();
+        fillVideos('music-videos', 'music');
+        fillVideos('telerik-videos', 'telerik');
+    });
     $('#register-form-btn').on('click', authentication.register);
+
+    //$('#usr').val('tea');
+    //$('#pwd').val('123');
+    //$('#login-btn').click();
 }());
