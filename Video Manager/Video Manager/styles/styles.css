@@ -1,9 +1,4 @@
-﻿#main-container {
-    border: 3px solid black;
-    height: 700px;
-}
-
-#on-log {
+﻿#on-log {
     display: none;
 }
 
@@ -70,10 +65,18 @@ li {
     border-radius: 15px;
 }
 
+#music-videos , #telerik-videos{
+    list-style-type: none;
+}
+
 #music-videos li , #telerik-videos li{
-    height: 80px;
-    width: 120px;
-    border: 1px solid black;
+    height: 140px;
+    width: 220px;
+    float: left;
+}
+
+.clearfix{
+    clear: both;
 }
 
 .form-control {

@@ -73,7 +73,7 @@
 
         var container = videoContainersIDs[category];
 
-        $('#' + container).append($('<li><iframe src="' + url + '" frameborder="0" ></iframe></li>'));
+        $('#' + container).append($('<li class="video-clip"><iframe src="' + url + '" frameborder="0" ></iframe></li>'));
     })
 
     $('#login-btn').on('click', function () {
@@ -86,4 +86,10 @@
     //$('#usr').val('tea');
     //$('#pwd').val('123');
     //$('#login-btn').click();
+
+    $('#container').on('click', '.video-clip', function () {
+        var $this = $(this);
+        $this.css('width', '500px');
+        $this.css('height', '300px');
+    })
 }());
