@@ -7,6 +7,7 @@
         $('.empty').css('height', '100px');
         $('.register').hide();
         $('.logged-user').hide();
+        $('#above-empty-row').html('')
     });
 
     $('#contacts').click(function () {
@@ -17,6 +18,7 @@
         $('.empty').css('height', '100px');
         $('.register').hide();
         $('.logged-user').hide();
+        $('#above-empty-row').html('');
     });
 
     $('#home').click(function () {
@@ -27,6 +29,7 @@
         $('.empty').css('height', '100px');
         $('.register').hide();
         $('.logged-user').hide();
+        $('#above-empty-row').html('');
     });
 
     $('#register-btn').click(function () {
@@ -37,6 +40,7 @@
         $('.empty').css('height', '100px');
         $('.register').show();
         $('.logged-user').hide();
+        $('#above-empty-row').html('');
     });
 
     $('#logout').click(function () {
@@ -49,6 +53,7 @@
         $('.logged-user').hide();
         $('#on-log').hide();
         $('#on-start').show();
+        $('#above-empty-row').html('');
     });
 
     var videoContainersIDs = { "music": "music-videos", "telerik": "telerik-videos" };
@@ -100,7 +105,6 @@
         $('#on-start').hide();
         $('#user-name').show();
         $('#greeting-span').hide();
-        var $this = $(this);
         $('#above-empty-row').html('').append($('<h4 />').text('Telerik videos:').css('text-align', 'center')).append($('#telerik-videos').css('padding-left', '100px'));
     });
 
@@ -116,8 +120,24 @@
         $('#on-start').hide();
         $('#user-name').show();
         $('#greeting-span').hide();
-        var $this = $(this);
         $('#above-empty-row').html('').append($('<h4 />').text('Music:').css('text-align', 'center')).append($('#music-videos').css('padding-left', '100px'));
+    });
+
+    $('#user-name').click(function () {
+        $('.login-div').hide();
+        $('.buttons').hide();
+        $('.main').hide();
+        $('.contacts').hide();
+        $('.register').hide();
+        $('.logged-user').show();
+        $('.empty').css('height', '50px');
+        $('#on-log').show();
+        $('#on-start').hide();
+        $('#user-name').show();
+        $('#greeting-span').show();
+        $('#music-col').append($('#music-videos').css('padding-left', '0px'));
+        $('#telerik-col').append($('#telerik-videos').css('padding-left', '0px'));
+        $('#above-empty-row').html('');
     });
 
     $('#container').on('click', '.video-clip', function () {
