@@ -5,7 +5,6 @@ var authentication = (function () {
         $('.buttons').hide();
         $('.main').hide();
         $('.contacts').hide();
-        $('.empty').css('height', '50px');
         $('.register').hide();
         $('.logged-user').show();
         $('#on-log').show();
@@ -24,7 +23,6 @@ var authentication = (function () {
         $('.buttons').hide();
         $('.main').hide();
         $('.contacts').hide();
-        $('.empty').css('height', '50px');
         $('.register').hide();
         $('.logged-user').show();
         $('#on-log').show();

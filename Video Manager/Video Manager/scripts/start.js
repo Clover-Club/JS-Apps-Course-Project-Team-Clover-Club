@@ -74,7 +74,7 @@
         var container = videoContainersIDs[category];
 
         $('#' + container).append($('<li><iframe src="' + url + '" frameborder="0" ></iframe></li>'));
-    })
+    });
 
     $('#login-btn').on('click', function () {
         authentication.login();

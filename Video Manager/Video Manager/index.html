@@ -3,8 +3,8 @@
 <head>
     <title>Clover Club Video Manager</title>
     <link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/bootstrap-custom-theme.css"/>
     <script src="libs/jquery-1.10.2.min.js"></script>
-    <!--<link rel="stylesheet" href="styles/theme.min">-->
     <link rel="stylesheet" href="styles/jquery-ui.min.css" />
     <link href="styles/styles.css" rel="stylesheet" />
 
@@ -42,7 +42,6 @@
             </div>
         </div>
 
-        <div class="row empty"></div>
         <div class="row main">
             <div class="col-md-3 div"></div>
             <div class="col-lg-6">
@@ -52,8 +51,8 @@
             <div class="col-md-3 div"></div>
         </div>
         <div class="row login-div">
-            <div class="col-md-3 div"></div>
-            <div class="col-md-6 div">
+            <div class="col-md-4 div"></div>
+            <div class="col-md-4 div">
                 <div class="form-group">
                     <label for="usr">Name:</label>
                     <input type="text" class="form-control" id="usr">
@@ -63,15 +62,15 @@
                     <input type="password" class="form-control" id="pwd">
                 </div>
             </div>
-            <div class="col-md-3 div"></div>
+            <div class="col-md-4 div"></div>
         </div>
         <div class="row buttons">
-            <div class="col-md-3 div"></div>
-            <div class="col-md-6 div">
+            <div class="col-md-4 div"></div>
+            <div class="col-md-4 div" id="my-buttons">
                 <input id="login-btn" type="button" class="btn btn-primary login" value="Login" />
                 <input id="register-btn" type="button" class="btn btn-primary" value="Register" />
             </div>
-            <div class="col-md-3 div"></div>
+            <div class="col-md-4 div"></div>
         </div>
         <div class="row contacts">
             <div class="col-md-3 div"></div>
@@ -101,8 +100,8 @@
             <div class="col-md-3 div"></div>
         </div>
         <div class="row register">
-            <div class="col-md-3 div"></div>
-            <div class="col-md-6 div">
+            <div class="col-md-4 div"></div>
+            <div class="col-md-4 div">
                 <form role="form">
                     <div class="form-group">
                         <label for="username">User name:</label>
@@ -122,27 +121,30 @@
                     <button id="register-form-btn" type="submit" class="btn btn-default">Submit</button>
                 </form>
             </div>
-            <div class="col-md-3 div"></div>
+            <div class="col-md-4 div"></div>
         </div>
         <div class="row logged-user">
             <div class="row">
                 <div id="greeting" class="col-md-3"><h3 class="h3">Hello, <span id="greeting-span"></span></h3></div>
             </div>
             <div class="row">
-                <div class="col-md-3"></div>
+                <div class="col-md-1"></div>
                 <div class="col-md-6">
-                    <label for="add-video">Add new video:</label>
-                    <select id="add-dd">
+                    <label for="add-video">Choose category:</label>
+                    <select class="form-control" id="add-dd">
                         <option value="music">Music</option>
-                        <option value="telerik">Telerik videos</option>
+                        <option value="telerik">Telerik Videos</option>
+                        <option>National Geographic</option>
+                        <option>Sports</option>
+                        <option>Concerts</option>
                     </select>
+
                     <input type="text" class="form-control" id="add-video-title" placeholder="Enter video title here">
                     <input type="text" class="form-control" id="add-video" placeholder="Enter video url here">
-                    <button id="add-form-btn">Add</button>
+                    <a href="#" class="btn btn-info" id="add-form-btn">Add video</a>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-1"></div>
             </div>
-            <div class="row empty"></div>
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
@@ -163,19 +165,7 @@
         </div>
     </div>
     <script>
-        $(function () {
-            $("#sortable").sortable({
-                revert: true
-            });
-            $("#draggable").draggable({
-                connectToSortable: "#sortable",
-                helper: "clone",
-                revert: "invalid"
-            });
-            $("ul, li").disableSelection();
 
-            $("#accordion").accordion();
-        });
     </script>
 
     <!--Libs-->
@@ -191,6 +181,7 @@
     <script src="scripts/videoStorage.js"></script>
     <script src="scripts/video.js"></script>
     <script src="scripts/start.js"></script>
+    <script src="scripts/contactUsDraggable.js"></script>
 
     <!--TODO: Use SystemJs to import the files above-->
 </body>
