@@ -7,6 +7,7 @@ var authentication = (function () {
         $('.contacts').hide();
         $('.register').hide();
         $('.logged-user').show();
+        $('.empty').css('height', '50px');
         $('#on-log').show();
         $('#on-start').hide();
         $('#user-name').text(data.username);

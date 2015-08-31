@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -70,7 +71,13 @@
     <Content Include="index.html" />
     <Content Include="scripts\ajaxRequester.js" />
     <Content Include="scripts\authentication.js" />
+    <Content Include="scripts\contactUsDraggable.js" />
     <Content Include="scripts\start.js" />
+    <Content Include="scripts\usersInputValidator.js" />
+    <Content Include="scripts\video.js" />
+    <Content Include="scripts\videoStorage.js" />
+    <Content Include="styles\bootstrap-custom-theme.css" />
+    <Content Include="styles\jquery-ui.min.css" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
