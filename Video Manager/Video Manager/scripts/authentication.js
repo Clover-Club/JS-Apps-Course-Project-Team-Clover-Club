@@ -1,9 +1,9 @@
 var authentication = (function () {
 
     function setSessionStorage(data) {
-        sessionStorage['currentUser'] = JSON.stringify(data.username);
-        sessionStorage['sessionToken'] = JSON.stringify(data.sessionToken);
-        sessionStorage['userId'] = JSON.stringify(data.objectId);
+        sessionStorage.currentUser = JSON.stringify(data.username);
+        sessionStorage.sessionToken = JSON.stringify(data.sessionToken);
+        sessionStorage.userId = JSON.stringify(data.objectId);
     }
 
     function authenticationSuccessForLogin(data) {
@@ -40,8 +40,7 @@ var authentication = (function () {
         $('#greeting-span').text($('#username').val());
 
         setSessionStorage(data);
-
-        // TODO: fix username in session storage
+        sessionStorage.currentUser = $('#username').val();
     }
 
     function login() {
