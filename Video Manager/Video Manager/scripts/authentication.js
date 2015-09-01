@@ -1,9 +1,9 @@
 var authentication = (function () {
 
     function setSessionStorage(data) {
-        sessionStorage.currentUser = JSON.stringify(data.username);
-        sessionStorage.sessionToken = JSON.stringify(data.sessionToken);
-        sessionStorage.userId = JSON.stringify(data.objectId);
+        sessionStorage.currentUser = (data.username);
+        sessionStorage.sessionToken = (data.sessionToken);
+        sessionStorage.userId = (data.objectId);
     }
 
     function authenticationSuccessForLogin(data) {

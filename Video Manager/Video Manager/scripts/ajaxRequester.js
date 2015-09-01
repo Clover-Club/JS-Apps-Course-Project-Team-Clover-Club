@@ -35,7 +35,7 @@ var ajaxRequester = (function() {
     }
 
     function createVideo(userId, idVideo, success, error) {
-        var objectToSend = {
+        var videoObject = {
             videoId: idVideo,
             userVideo: {
                 __type: "Pointer",
@@ -49,7 +49,7 @@ var ajaxRequester = (function() {
             headers: headers,
             url: baseUrl + "classes/Video",
             contentType: 'application/json',
-            data: JSON.stringify(objectToSend),
+            data: JSON.stringify(videoObject),
             success: success,
             error: error
         });
