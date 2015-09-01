@@ -1,5 +1,11 @@
 var authentication = (function () {
 
+    function setSessionStorage(data) {
+        sessionStorage['currentUser'] = JSON.stringify(data.username);
+        sessionStorage['sessionToken'] = JSON.stringify(data.sessionToken);
+        sessionStorage['userId'] = JSON.stringify(data.objectId);
+    }
+
     function authenticationSuccessForLogin(data) {
         $('.login-div').hide();
         $('.buttons').hide();
@@ -12,6 +18,8 @@ var authentication = (function () {
         $('#on-start').hide();
         $('#user-name').text(data.username);
         $('#greeting-span').text(data.username);
+
+        setSessionStorage(data);
     }
 
     function authenticationFailed(error) {
@@ -30,6 +38,10 @@ var authentication = (function () {
         $('#on-start').hide();
         $('#user-name').text($('#username').val());
         $('#greeting-span').text($('#username').val());
+
+        setSessionStorage(data);
+
+        // TODO: fix username in session storage
     }
 
     function login() {

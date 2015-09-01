@@ -34,8 +34,30 @@ var ajaxRequester = (function() {
         });
     }
 
+    function createVideo(userId, idVideo, success, error) {
+        var objectToSend = {
+            videoId: idVideo,
+            userVideo: {
+                __type: "Pointer",
+                className: "_User",
+                objectId: userId
+            }
+        };
+
+        jQuery.ajax({
+            method: "POST",
+            headers: headers,
+            url: baseUrl + "classes/Video",
+            contentType: 'application/json',
+            data: JSON.stringify(objectToSend),
+            success: success,
+            error: error
+        });
+    }
+
     return {
         login: login,
-        register: register
+        register: register,
+        createVideo: createVideo
     };
 })();
