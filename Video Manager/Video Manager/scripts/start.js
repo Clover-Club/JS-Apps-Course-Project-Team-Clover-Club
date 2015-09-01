@@ -86,16 +86,13 @@
         var videoId = videoUrlParser.parse(url);
         var userId = sessionStorage.userId;
 
-        ajaxRequester.createVideo(userId, videoId, console.log(), console.log());
-
-
-
+        ajaxRequester.createVideo(userId, videoId, videoStorage.setVideoId);
     });
 
     $('#login-btn').on('click', function () {
         authentication.login();
-        fillVideos('music-videos', 'music');
-        fillVideos('telerik-videos', 'telerik');
+        // fillVideos('music-videos', 'music');
+        // fillVideos('telerik-videos', 'telerik');
     });
 
     $('#register-form-btn').on('click', authentication.register);

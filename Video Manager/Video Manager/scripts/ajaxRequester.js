@@ -55,9 +55,34 @@ var ajaxRequester = (function() {
         });
     }
 
+    function getVideos(userId, success, error) {
+        jQuery.ajax({
+            method: "GET",
+            headers: headers,
+            url: baseUrl + "classes/Video",
+            data: {
+                "where": '{"userVideo":{"__type":"Pointer","className":"_User","objectId":' + userId + '}}'
+            },
+            success: success,
+            error: error
+        });
+    }
+
+    function getCurrentVideo(videoId, success, error) {
+        jQuery.ajax({
+            method: "GET",
+            headers: headers,
+            url: baseUrl + "classes/Video" + videoId,
+            success: success,
+            error: error
+        });
+    }
+
     return {
         login: login,
         register: register,
-        createVideo: createVideo
+        createVideo: createVideo,
+        getVideos: getVideos,
+        getCurrentVideo: getCurrentVideo
     };
 })();
