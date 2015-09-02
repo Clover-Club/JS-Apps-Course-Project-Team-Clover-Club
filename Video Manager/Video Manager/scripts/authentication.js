@@ -1,4 +1,4 @@
-var authentication = (function () {
+var authentication = (function() {
 
     function setSessionStorage(data) {
         sessionStorage.currentUser = (data.username);
@@ -59,8 +59,15 @@ var authentication = (function () {
         }
     }
 
+    function logout() {
+        delete sessionStorage.currentUser;
+        delete sessionStorage.sessionToken;
+        delete sessionStorage.userId;
+    }
+
     return {
         login: login,
-        register: register
+        register: register,
+        logout: logout
     };
 }());

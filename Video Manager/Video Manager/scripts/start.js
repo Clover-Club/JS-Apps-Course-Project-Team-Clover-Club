@@ -59,6 +59,8 @@
         $('#on-log').hide();
         $('#on-start').show();
         $('#above-empty-row').html('');
+
+        authentication.logout();
     });
 
     var videoContainersIDs = {
