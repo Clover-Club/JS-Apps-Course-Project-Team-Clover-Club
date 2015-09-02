@@ -89,7 +89,6 @@
         ajaxRequester.createVideo(userId, videoId, videoStorage.setVideoId);
 
         var videoIdInDatabase = sessionStorage.currentAddedVideo;
-        console.log(videoIdInDatabase);
 
         // remove this later
         ajaxRequester.getVideos(userId, videoRenderer.renderAllVideos);

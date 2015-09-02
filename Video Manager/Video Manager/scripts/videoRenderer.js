@@ -1,20 +1,13 @@
 var videoRenderer = (function() {
-	var PLAYER_HEIGHT = 390;
-	var PLAYER_WIDTH = 640;
+    var PLAYER_HEIGHT = 400;
+    var PLAYER_WIDTH = 400;
 
     function renderAllVideos(usersVideos) {
-        console.log(usersVideos.results);
         var videos = usersVideos.results;
-
-        // var tag = document.createElement('script');
-        // tag.src = "https://www.youtube.com/iframe_api";
-        // var firstScriptTag = document.getElementsByTagName('script')[0];
-        // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var containter = document.getElementById('main-container');
+        var containter = $('#users-videos');
+        containter.html('');
 
         function onYouTubeIframeAPIReady() {
-        	console.log(5);
             if (typeof videos === 'undefined')
                 return;
 
@@ -24,9 +17,9 @@ var videoRenderer = (function() {
         }
 
         function createPlayer(videos) {
-            var div = document.createElement('div');
-            div.setAttribute('id', videos.objectId);
-            containter.appendChild(div);
+            var div = $('<div>');
+            div.attr('id', videos.objectId);
+            containter.prepend(div);
             return new YT.Player(videos.objectId, {
                 height: PLAYER_HEIGHT,
                 width: PLAYER_WIDTH,
@@ -38,7 +31,7 @@ var videoRenderer = (function() {
     }
 
     function renderSingeVideo(userVideo) {
-    	console.log(userVideo);
+        console.log(userVideo);
     }
 
     return {
