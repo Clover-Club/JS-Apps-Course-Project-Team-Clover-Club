@@ -1,5 +1,4 @@
 var authentication = (function() {
-
     function setSessionStorage(data) {
         sessionStorage.currentUser = (data.username);
         sessionStorage.sessionToken = (data.sessionToken);
@@ -7,15 +6,7 @@ var authentication = (function() {
     }
 
     function authenticationSuccessForLogin(data) {
-        $('.login-div').hide();
-        $('.buttons').hide();
-        $('.main').hide();
-        $('.contacts').hide();
-        $('.register').hide();
-        $('.logged-user').show();
-        $('.empty').css('height', '50px');
-        $('#on-log').show();
-        $('#on-start').hide();
+        $('#logout').show();
         $('#user-name').text(data.username);
         $('#greeting-span').text(data.username);
 

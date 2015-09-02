@@ -1,4 +1,12 @@
-﻿.buttons {
+﻿#user-name {
+    display: none;
+}
+
+#logout {
+    display: none;
+}
+
+.buttons {
     text-align: center;
 }
 
@@ -45,16 +53,6 @@ li {
     border-radius: 15px;
 }
 
-#music-videos , #telerik-videos{
-    list-style-type: none;
-}
-
-#music-videos li , #telerik-videos li{
-    height: 140px;
-    width: 220px;
-    float: left;
-}
-
 .clearfix{
     clear: both;
 }
@@ -70,6 +68,7 @@ li {
 
 iframe {
     width: 100%;
+<<<<<<< HEAD
 }
 
 #login{
@@ -101,3 +100,6 @@ iframe {
     color: white;
     text-shadow: 2px 2px 4px #000000;
 }
+=======
+}
+>>>>>>> origin/master
