@@ -10,7 +10,23 @@ var validator = (function() {
         return false;
     }
 
+    function changeNavbar(isLoggedIn) {
+        if (isLoggedIn) {
+            $('#user-name').show();
+            $('#user-name').text(isLoggedIn);
+            $('#login').hide();
+            $('#contacts').show();
+            $('#logout').hide();
+        } else {
+            $('#user-name').hide();
+            $('#login').show();
+            $('#contacts').show();
+            $('#logout').hide();
+        }
+    }
+
     return {
-    	registerPassword: registerPassword
+    	registerPassword: registerPassword,
+        changeNavbar: changeNavbar
     };
 }());
