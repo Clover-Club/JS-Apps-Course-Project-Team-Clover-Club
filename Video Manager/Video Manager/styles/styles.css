@@ -53,7 +53,7 @@ li {
     border-radius: 15px;
 }
 
-.clearfix{
+.clearfix {
     clear: both;
 }
 
@@ -68,4 +68,36 @@ li {
 
 iframe {
     width: 100%;
+}
+
+#login {
+    margin: 10px;
+    font-weight: bold;
+
+}
+
+#contacts {
+    margin: 10px;
+    font-weight: bold;
+
+}
+
+#welcome, #members {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+#welcome h2, h4 {
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+#home {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 1.6em;
+    margin: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }

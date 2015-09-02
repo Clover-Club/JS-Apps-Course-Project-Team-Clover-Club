@@ -1,4 +1,5 @@
 var validator = (function() {
+
     function registerPassword() {
         var password = $('#pass'),
             repatedPassword = $('#pass-repeat');
@@ -6,7 +7,6 @@ var validator = (function() {
         if (password === repatedPassword) {
             return true;
         }
-
         return false;
     }
 
