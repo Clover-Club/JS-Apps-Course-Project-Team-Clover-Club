@@ -1121,7 +1121,6 @@
     <Content Include="scripts\authentication.js" />
     <Content Include="scripts\contactUsDraggable.js" />
     <Content Include="scripts\routingSammy.js" />
-    <Content Include="scripts\start.js" />
     <Content Include="scripts\usersInputValidator.js" />
     <Content Include="scripts\videoRenderer.js" />
     <Content Include="scripts\videoStorage.js" />
