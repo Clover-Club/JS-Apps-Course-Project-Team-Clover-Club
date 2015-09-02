@@ -78,8 +78,10 @@
         ajaxRequester.getVideos(userId, videoRenderer.renderAllVideos);
     });
 
-    $('#login-btn').on('click', function() {
+    $('#login-btn').on('click', function () {
         authentication.login();
+        var userId = sessionStorage.userId;
+        ajaxRequester.getVideos(userId, videoRenderer.renderAllVideos);
     });
 
     $('#register-form-btn').on('click', authentication.register);
