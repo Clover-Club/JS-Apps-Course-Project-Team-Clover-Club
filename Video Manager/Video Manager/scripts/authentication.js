@@ -22,9 +22,6 @@ var authentication = (function () {
 
     function authenticationSuccessForRegistering(data) {
         alert('Congratulations! You can now log in in your account!')
-
-        setSessionStorage(data);
-        sessionStorage.currentUser = $('#username').val();
     }
 
     function login() {
