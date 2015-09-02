@@ -34,14 +34,15 @@ var ajaxRequester = (function() {
         });
     }
 
-    function createVideo(userId, idVideo, success, error) {
+    function createVideo(userId, idVideo, providedCategory, success, error) {
         var videoObject = {
             videoId: idVideo,
             userVideo: {
                 __type: "Pointer",
                 className: "_User",
                 objectId: userId
-            }
+            },
+            category: providedCategory
         };
 
         jQuery.ajax({
