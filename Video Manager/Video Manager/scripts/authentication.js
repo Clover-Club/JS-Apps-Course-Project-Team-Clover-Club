@@ -1,4 +1,4 @@
-var authentication = (function() {
+var authentication = (function () {
     function setSessionStorage(data) {
         sessionStorage.currentUser = (data.username);
         sessionStorage.sessionToken = (data.sessionToken);
@@ -6,9 +6,11 @@ var authentication = (function() {
     }
 
     function authenticationSuccessForLogin(data) {
+        location.href = '#/logged';
+
+        console.log(data.username);
+
         $('#logout').show();
-        $('#user-name').text(data.username);
-        $('#greeting-span').text(data.username);
 
         setSessionStorage(data);
     }

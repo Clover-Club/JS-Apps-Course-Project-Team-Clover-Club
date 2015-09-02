@@ -1,5 +1,4 @@
-var validator = (function() {
-
+var validator = (function () {
     function registerPassword() {
         var password = $('#pass'),
             repatedPassword = $('#pass-repeat');
@@ -7,6 +6,7 @@ var validator = (function() {
         if (password === repatedPassword) {
             return true;
         }
+
         return false;
     }
 
@@ -17,6 +17,7 @@ var validator = (function() {
             $('#login').hide();
             $('#contacts').show();
             $('#logout').hide();
+            $('#greeting-span').text(isLoggedIn);
         } else {
             $('#user-name').hide();
             $('#login').show();
@@ -26,7 +27,7 @@ var validator = (function() {
     }
 
     return {
-    	registerPassword: registerPassword,
+        registerPassword: registerPassword,
         changeNavbar: changeNavbar
     };
 }());
