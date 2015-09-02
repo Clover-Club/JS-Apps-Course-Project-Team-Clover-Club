@@ -1,26 +1,6 @@
-﻿#on-log {
-    display: none;
-}
+﻿.buttons {
 
-.login-div {
-    display: none;
-}
-
-.register {
-    display: none;
-}
-
-.buttons {
-    display: none;
     text-align: center;
-}
-
-.contacts {
-    display: none;
-}
-
-.logged-user {
-    display: none;
 }
 
 h5:hover {
