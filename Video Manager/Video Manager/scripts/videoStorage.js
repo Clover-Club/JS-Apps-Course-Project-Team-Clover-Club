@@ -5,5 +5,5 @@
 
     return {
         setVideoId: setVideoId
-    }
+    };
 }());

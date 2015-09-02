@@ -87,6 +87,12 @@
         var userId = sessionStorage.userId;
 
         ajaxRequester.createVideo(userId, videoId, videoStorage.setVideoId);
+
+        var videoIdInDatabase = sessionStorage.currentAddedVideo;
+        console.log(videoIdInDatabase);
+
+        // remove this later
+        ajaxRequester.getCurrentVideo(videoIdInDatabase, videoRenderer.renderSingeVideo);
     });
 
     $('#login-btn').on('click', function () {
