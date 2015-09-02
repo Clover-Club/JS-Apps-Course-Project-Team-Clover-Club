@@ -21,16 +21,7 @@ var authentication = (function () {
     }
 
     function authenticationSuccessForRegistering(data) {
-        $('.login-div').hide();
-        $('.buttons').hide();
-        $('.main').hide();
-        $('.contacts').hide();
-        $('.register').hide();
-        $('.logged-user').show();
-        $('#on-log').show();
-        $('#on-start').hide();
-        $('#user-name').text($('#username').val());
-        $('#greeting-span').text($('#username').val());
+        alert('Congratulations! You can now log in in your account!')
 
         setSessionStorage(data);
         sessionStorage.currentUser = $('#username').val();

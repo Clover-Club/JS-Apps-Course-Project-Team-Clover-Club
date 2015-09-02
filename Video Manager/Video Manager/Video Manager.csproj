@@ -62,6 +62,7 @@
     <Content Include="controllers\homeController.js" />
     <Content Include="controllers\loggedController.js" />
     <Content Include="controllers\loginController.js" />
+    <Content Include="controllers\registerController.js" />
     <Content Include="imgs\youtube.png" />
     <Content Include="libs\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="libs\bootstrap\dist\css\bootstrap-theme.min.css" />
