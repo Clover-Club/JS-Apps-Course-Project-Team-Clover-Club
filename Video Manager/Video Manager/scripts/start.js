@@ -37,16 +37,16 @@
         $('#above-empty-row').html('');
     });
 
-    $('#register-btn').click(function() {
-        $('.login-div').hide();
-        $('.buttons').hide();
-        $('.main').hide();
-        $('.contacts').hide();
-        $('.empty').css('height', '100px');
-        $('.register').show();
-        $('.logged-user').hide();
-        $('#above-empty-row').html('');
-    });
+    //$('#register-btn').click(function() {
+    //    $('.login-div').hide();
+    //    $('.buttons').hide();
+    //    $('.main').hide();
+    //    $('.contacts').hide();
+    //    $('.empty').css('height', '100px');
+    //    $('.register').show();
+    //    $('.logged-user').hide();
+    //    $('#above-empty-row').html('');
+    //});
 
     $('#logout').click(function() {
         $('.login-div').hide();
