@@ -63,22 +63,6 @@
         authentication.logout();
     });
 
-    var videoContainersIDs = {
-        "music": "music-videos",
-        "telerik": "telerik-videos"
-    };
-
-    function fillVideos(container, videoCategory) {
-        var resultHTML = '';
-        var videos = videoStorage.getVideosByCategory(videoCategory);
-        for (var i = 0; i < videos.length; i++) {
-            var url = videos[i].getUrl();
-            resultHTML += '<li><iframe src="' + url + '" frameborder="0" ></iframe></li>';
-        }
-
-        $('#' + container).append($(resultHTML));
-    }
-
     $('#add-form-btn').click(function() {
         var url = $("#add-video").val();
         // create video here
@@ -100,36 +84,6 @@
 
     $('#register-form-btn').on('click', authentication.register);
 
-    $('#telerik').on('click', function() {
-        $('.login-div').hide();
-        $('.buttons').hide();
-        $('.main').hide();
-        $('.contacts').hide();
-        $('.empty').css('height', '50px');
-        $('.register').hide();
-        $('.logged-user').hide();
-        $('#on-log').show();
-        $('#on-start').hide();
-        $('#user-name').show();
-        $('#greeting-span').hide();
-        $('#above-empty-row').html('').append($('<h4 />').text('Telerik videos:').css('text-align', 'center')).append($('#telerik-videos').css('padding-left', '100px'));
-    });
-
-    $('#music').on('click', function() {
-        $('.login-div').hide();
-        $('.buttons').hide();
-        $('.main').hide();
-        $('.contacts').hide();
-        $('.empty').css('height', '50px');
-        $('.register').hide();
-        $('.logged-user').hide();
-        $('#on-log').show();
-        $('#on-start').hide();
-        $('#user-name').show();
-        $('#greeting-span').hide();
-        $('#above-empty-row').html('').append($('<h4 />').text('Music:').css('text-align', 'center')).append($('#music-videos').css('padding-left', '100px'));
-    });
-
     $('#user-name').click(function() {
         $('.login-div').hide();
         $('.buttons').hide();
@@ -142,14 +96,6 @@
         $('#on-start').hide();
         $('#user-name').show();
         $('#greeting-span').show();
-        $('#music-col').append($('#music-videos').css('padding-left', '0px'));
-        $('#telerik-col').append($('#telerik-videos').css('padding-left', '0px'));
         $('#above-empty-row').html('');
-    });
-
-    $('#container').on('click', '.video-clip', function() {
-        var $this = $(this);
-        $this.css('width', '500px');
-        $this.css('height', '300px');
     });
 }());
