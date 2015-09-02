@@ -1,5 +1,10 @@
 ﻿var start = (function start() {
-    $('#login').click(function () {
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    $('#login').click(function() {
         $('.login-div').show();
         $('.buttons').show();
         $('.main').hide();
@@ -10,7 +15,7 @@
         $('#above-empty-row').html('');
     });
 
-    $('#contacts').click(function () {
+    $('#contacts').click(function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').hide();
@@ -21,7 +26,7 @@
         $('#above-empty-row').html('');
     });
 
-    $('#home').click(function () {
+    $('#home').click(function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').show();
@@ -32,7 +37,7 @@
         $('#above-empty-row').html('');
     });
 
-    $('#register-btn').click(function () {
+    $('#register-btn').click(function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').hide();
@@ -43,7 +48,7 @@
         $('#above-empty-row').html('');
     });
 
-    $('#logout').click(function () {
+    $('#logout').click(function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').show();
@@ -56,7 +61,11 @@
         $('#above-empty-row').html('');
     });
 
-    var videoContainersIDs = { "music": "music-videos", "telerik": "telerik-videos" };
+    var videoContainersIDs = {
+        "music": "music-videos",
+        "telerik": "telerik-videos"
+    };
+
     function fillVideos(container, videoCategory) {
         var resultHTML = '';
         var videos = videoStorage.getVideosByCategory(videoCategory);
@@ -68,19 +77,8 @@
         $('#' + container).append($(resultHTML));
     }
 
-    $('#add-form-btn').click(function () {
-        var title = $("#add-video-title").val();
+    $('#add-form-btn').click(function() {
         var url = $("#add-video").val();
-        // url = url.replace("watch?v=", "embed/");
-        // var category = $("#add-dd").val();
-        // var video = new Video({ title: title, url: url, category: category });
-        // videoStorage.addVideo(video);
-
-        // var container = videoContainersIDs[category];
-
-        // $('#' + container).append($('<li class="video-clip"><iframe src="' + url + '" frameborder="0" ></iframe></li>'));
-
-
         // create video here
 
         var videoId = videoUrlParser.parse(url);
@@ -92,22 +90,16 @@
         console.log(videoIdInDatabase);
 
         // remove this later
-        ajaxRequester.getCurrentVideo(videoIdInDatabase, videoRenderer.renderSingeVideo);
+        ajaxRequester.getVideos(userId, videoRenderer.renderAllVideos);
     });
 
-    $('#login-btn').on('click', function () {
+    $('#login-btn').on('click', function() {
         authentication.login();
-        // fillVideos('music-videos', 'music');
-        // fillVideos('telerik-videos', 'telerik');
     });
 
     $('#register-form-btn').on('click', authentication.register);
 
-    //$('#usr').val('tea');
-    //$('#pwd').val('123');
-    //$('#login-btn').click();
-
-    $('#telerik').on('click', function () {
+    $('#telerik').on('click', function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').hide();
@@ -122,7 +114,7 @@
         $('#above-empty-row').html('').append($('<h4 />').text('Telerik videos:').css('text-align', 'center')).append($('#telerik-videos').css('padding-left', '100px'));
     });
 
-    $('#music').on('click', function () {
+    $('#music').on('click', function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').hide();
@@ -137,7 +129,7 @@
         $('#above-empty-row').html('').append($('<h4 />').text('Music:').css('text-align', 'center')).append($('#music-videos').css('padding-left', '100px'));
     });
 
-    $('#user-name').click(function () {
+    $('#user-name').click(function() {
         $('.login-div').hide();
         $('.buttons').hide();
         $('.main').hide();
@@ -154,7 +146,7 @@
         $('#above-empty-row').html('');
     });
 
-    $('#container').on('click', '.video-clip', function () {
+    $('#container').on('click', '.video-clip', function() {
         var $this = $(this);
         $this.css('width', '500px');
         $this.css('height', '300px');

@@ -6,12 +6,12 @@ var videoRenderer = (function() {
         console.log(usersVideos.results);
         var videos = usersVideos.results;
 
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        // var tag = document.createElement('script');
+        // tag.src = "https://www.youtube.com/iframe_api";
+        // var firstScriptTag = document.getElementsByTagName('script')[0];
+        // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        var containter = document.getElementById('music');
+        var containter = document.getElementById('main-container');
 
         function onYouTubeIframeAPIReady() {
         	console.log(5);
@@ -33,6 +33,8 @@ var videoRenderer = (function() {
                 videoId: videos.videoId
             });
         }
+
+        onYouTubeIframeAPIReady();
     }
 
     function renderSingeVideo(userVideo) {
