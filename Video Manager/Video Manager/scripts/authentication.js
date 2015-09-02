@@ -8,8 +8,6 @@ var authentication = (function () {
     function authenticationSuccessForLogin(data) {
         location.href = '#/logged';
 
-        console.log(data.username);
-
         $('#logout').show();
 
         setSessionStorage(data);
