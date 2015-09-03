@@ -1,4 +1,15 @@
-﻿.buttons {
+﻿#navbar,.navbar-header{
+    background: rgb(181,189,200);
+    background: -moz-linear-gradient(top,  rgba(181,189,200,1) 3%, rgba(130,140,149,1) 23%, rgba(22,29,33,1) 91%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,rgba(181,189,200,1)), color-stop(23%,rgba(130,140,149,1)), color-stop(91%,rgba(22,29,33,1)));
+    background: -webkit-linear-gradient(top,  rgba(181,189,200,1) 3%,rgba(130,140,149,1) 23%,rgba(22,29,33,1) 91%);
+    background: -o-linear-gradient(top,  rgba(181,189,200,1) 3%,rgba(130,140,149,1) 23%,rgba(22,29,33,1) 91%);
+    background: -ms-linear-gradient(top,  rgba(181,189,200,1) 3%,rgba(130,140,149,1) 23%,rgba(22,29,33,1) 91%);
+    background: linear-gradient(to bottom,  rgba(181,189,200,1) 3%,rgba(130,140,149,1) 23%,rgba(22,29,33,1) 91%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#161d21',GradientType=0 );
+}
+
+.buttons {
     text-align: center;
 }
 
@@ -51,8 +62,9 @@ iframe {
 }
 
 #login,#contacts {
-    margin: 5px;
     font-weight: bold;
+    margin: 4px;
+
 }
 
 #welcome, #members {
@@ -63,21 +75,20 @@ iframe {
 
 #welcome h2, h4 {
     font-family: 'Ubuntu', sans-serif;
-
 }
 
 #home {
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    font-size: 1.6em;
+    font-size: 1.5em;
     margin: 10px;
-    color: white;
+    color: antiquewhite;
     text-shadow: 2px 2px 4px #000000;
 }
 
 #greeting-span{
     font-family: 'Ubuntu', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color:#00b3ee;
 }
 
@@ -85,10 +96,25 @@ iframe {
     font-family: 'Ubuntu', sans-serif;
     color:#00b3ee;
     font-weight: bold;
+    font-size: 1.2em;
+    margin: 4px;
 }
 
 #logout{
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
+    margin: 4px;
+}
+
+#sortable li{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 6px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+#sortable li div{
+    font-family: 'Ubuntu', sans-serif;
+    color: orangered;
 
 }
