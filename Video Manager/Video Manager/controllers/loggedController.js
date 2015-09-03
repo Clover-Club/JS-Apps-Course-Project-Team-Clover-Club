@@ -36,16 +36,14 @@ var loggedController = (function () {
             if (filtered.length !== 0) {
                 _.each(filtered, function (video) {
                     videoRenderer.renderSingleVideo($('#users-videos'), video);
-                })
+                });
                 $('#users-videos').prepend($('<h4 />').text(category).addClass('categories'));
             }
         }
         else {
             location.href = '#/logged';
         }
-    })
-
-
+    });
 
     function showAllVideosInCategories(data) {
         videos = data.results;
@@ -78,18 +76,16 @@ var loggedController = (function () {
 
         location.href = '#/logged';
 
-        var url = $("#add-video").val();
-        // create video here
-
-        var videoId = videoUrlParser.parse(url);
-        var userId = sessionStorage.userId;
-        var category = $('#category').val() || 'Other';
+        var url = $("#add-video").val(),
+            videoId = videoUrlParser.parse(url),
+            userId = sessionStorage.userId,
+            category = $('#category').val() || 'Other';
 
         $("#category-options > option").each(function () {
             if (this.text === category) {
                 hasThisCategory = true;
-                return
-            };
+                return;
+            }
         });
 
         if (hasThisCategory === false) {
@@ -99,18 +95,33 @@ var loggedController = (function () {
             }));
         }
 
+        if(videoId === "" || videoId === undefined){
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "200",
+                "hideDuration": "3000",
+                "timeOut": "2000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            
+            toastr.warning('Please, try again', 'Missed something');
+            return;
+        }
+
         ajaxRequester.createVideo(userId, videoId, category, videoStorage.setVideoId);
 
         var videoIdInDatabase = sessionStorage.currentAddedVideo;
 
-        // remove this later
         ajaxRequester.getVideos(userId, showAllVideosInCategories);
-
-
-
     });
-
-
-    location.href = '#/logged';
-
 })();

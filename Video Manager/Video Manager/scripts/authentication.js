@@ -33,7 +33,7 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.success('Login Successed', 'Welcome :)')
+        toastr.success('Login Succeeded', 'Welcome :)')
     }
 
     function errorLogin(){
