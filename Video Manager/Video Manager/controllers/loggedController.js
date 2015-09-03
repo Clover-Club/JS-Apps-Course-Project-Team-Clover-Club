@@ -1,4 +1,5 @@
 var loggedController = (function () {
+    var videos;
     validator.changeNavbar(sessionStorage.currentUser);
 
     $('#logout').show();
@@ -6,12 +7,30 @@ var loggedController = (function () {
 
     $('#logout').on('click', authentication.logout);
 
-    //ajaxRequester.getVideos(sessionStorage.userId, videoRenderer.renderAllVideos);
+    $('#show-form-btn').on('click', function () {
+        var category = $('#show').val();
+        console.log(category);
+        console.log(videos);
+        $('#users-videos').html('');
+        var filtered = _.filter(videos, function (video) {
+            return video.category == category;
+        });
+
+        if (filtered.length !== 0) {
+            _.each(filtered, function (video) {
+                videoRenderer.renderSingleVideo($('#users-videos'), video);
+            })
+            $('#users-videos').prepend($('<h5 />').text(category));
+        }
+        else {
+            $('#users-videos').append($('<h5 />').text('There are no videos in such category!'));
+        }
+    })
 
     ajaxRequester.getVideos(sessionStorage.userId, showAllVideosInCategories);
 
     function showAllVideosInCategories(data) {
-        var videos = data.results;
+        videos = data.results;
         var groupedVideos = _.groupBy(videos, 'category');
         $('#users-videos').html('');
         _.each(groupedVideos, function (value, key) {
@@ -30,7 +49,6 @@ var loggedController = (function () {
                     .css("font-family","'Ubuntu', sans-serif;")
                     .text(key))
                     .css("color","#faebb8");
-
         });
     }
 

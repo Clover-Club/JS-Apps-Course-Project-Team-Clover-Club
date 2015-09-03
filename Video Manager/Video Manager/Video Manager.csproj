@@ -92,6 +92,15 @@
     <Content Include="libs\bootstrap\js\tooltip.js" />
     <Content Include="libs\bootstrap\js\transition.js" />
     <Content Include="libs\bootstrap\package.js" />
+    <Content Include="libs\handlebars\.gitignore" />
+    <Content Include="libs\handlebars\handlebars.amd.js" />
+    <Content Include="libs\handlebars\handlebars.amd.min.js" />
+    <Content Include="libs\handlebars\handlebars.js" />
+    <Content Include="libs\handlebars\handlebars.min.js" />
+    <Content Include="libs\handlebars\handlebars.runtime.amd.js" />
+    <Content Include="libs\handlebars\handlebars.runtime.amd.min.js" />
+    <Content Include="libs\handlebars\handlebars.runtime.js" />
+    <Content Include="libs\handlebars\handlebars.runtime.min.js" />
     <Content Include="libs\jquery-1.10.2.min.js" />
     <Content Include="libs\jquery-ui\.gitignore" />
     <Content Include="libs\jquery-ui\AUTHORS.txt" />
@@ -977,6 +986,10 @@
     <Content Include="libs\sammy\lib\plugins\sammy.title.js" />
     <Content Include="libs\sammy\lib\plugins\sammy.tmpl.js" />
     <Content Include="libs\sammy\lib\sammy.js" />
+    <Content Include="libs\toastr\toastr.css" />
+    <Content Include="libs\toastr\toastr.js" />
+    <Content Include="libs\toastr\toastr.min.css" />
+    <Content Include="libs\toastr\toastr.min.js" />
     <Content Include="libs\underscore\underscore-min.js" />
     <Content Include="libs\underscore\underscore.js" />
     <Content Include="package.json" />
@@ -1104,6 +1117,21 @@
     <Content Include="libs\sammy\package.json" />
     <Content Include="libs\sammy\Rakefile" />
     <Content Include="libs\sammy\README.md" />
+    <Content Include="libs\handlebars\.bower.json" />
+    <Content Include="libs\handlebars\bower.json" />
+    <Content Include="libs\handlebars\component.json" />
+    <Content Include="libs\handlebars\composer.json" />
+    <Content Include="libs\handlebars\handlebars-source.gemspec" />
+    <Content Include="libs\handlebars\handlebars.js.nuspec" />
+    <Content Include="libs\handlebars\lib\handlebars\source.rb" />
+    <Content Include="libs\handlebars\package.json" />
+    <Content Include="libs\handlebars\README.md" />
+    <Content Include="libs\toastr\.bower.json" />
+    <Content Include="libs\toastr\bower.json" />
+    <Content Include="libs\toastr\README.md" />
+    <Content Include="libs\toastr\toastr.js.map" />
+    <Content Include="libs\toastr\toastr.less" />
+    <Content Include="libs\toastr\toastr.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
