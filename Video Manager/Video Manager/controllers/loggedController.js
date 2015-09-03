@@ -9,6 +9,11 @@ var loggedController = (function () {
 
     function showCategoryOptions() {
         var allCategories = $('.categories');
+        $('#category-options').html('');
+        $('#category-options').append($('<option>', {
+            value: 'all',
+            text: 'All'
+        }));
         $.each(allCategories, function (i, category) {
             category = $(category);
             $('#category-options').append($('<option>', {
@@ -22,21 +27,21 @@ var loggedController = (function () {
 
     $('#show-form-btn').on('click', function () {
         var category = $("#category-options option:selected").text();
-        console.log(category);
-        console.log(videos);
-        $('#users-videos').html('');
-        var filtered = _.filter(videos, function (video) {
-            return video.category == category;
-        });
+        if (category !== 'All') {
+            $('#users-videos').html('');
+            var filtered = _.filter(videos, function (video) {
+                return video.category == category;
+            });
 
-        if (filtered.length !== 0) {
-            _.each(filtered, function (video) {
-                videoRenderer.renderSingleVideo($('#users-videos'), video);
-            })
-            $('#users-videos').prepend($('<h4 />').text(category).addClass('categories'));
+            if (filtered.length !== 0) {
+                _.each(filtered, function (video) {
+                    videoRenderer.renderSingleVideo($('#users-videos'), video);
+                })
+                $('#users-videos').prepend($('<h4 />').text(category).addClass('categories'));
+            }
         }
         else {
-            $('#users-videos').append($('<h5 />').text('There are no videos in such category!'));
+            location.href = '#/logged';
         }
     })
 
