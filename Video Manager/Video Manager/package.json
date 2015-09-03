@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"р
+    "test": "echo \"Error: no test specified\" && exit 1",
 	"start": "node ./node_modules/http-server/bin/http-server -p 8888"
   },
   "author": "",
