@@ -81,11 +81,22 @@ var ajaxRequester = (function() {
         });
     }
 
+    function deleteVideo(videoId, success, error) {
+        jQuery.ajax({
+            method: "DELETE",
+            headers: headers,
+            url: baseUrl + "classes/Video/" + videoId,
+            success: success,
+            error: error
+        });
+    }
+
     return {
         login: login,
         register: register,
         createVideo: createVideo,
         getVideos: getVideos,
-        getCurrentVideo: getCurrentVideo
+        getCurrentVideo: getCurrentVideo,
+        deleteVideo: deleteVideo
     };
 })();
