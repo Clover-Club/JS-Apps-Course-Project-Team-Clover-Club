@@ -42,6 +42,7 @@ var authentication = (function () {
         delete sessionStorage.currentUser;
         delete sessionStorage.sessionToken;
         delete sessionStorage.userId;
+        delete sessionStorage.currentAddedVideo;
 
         var containter = $('#users-videos');
         containter.html('');

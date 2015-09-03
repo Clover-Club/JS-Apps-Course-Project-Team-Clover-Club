@@ -29,9 +29,9 @@ var loggedController = (function () {
                     .css("box-shadow","7px 7px 4px #1d2428")
                     .css("font-family","'Ubuntu', sans-serif;")
                     .text(key))
-                    .css("color","#faebb8")
+                    .css("color","#faebb8");
 
-        })
+        });
     }
 
     $('#add-form-btn').click(function () {
@@ -42,7 +42,7 @@ var loggedController = (function () {
 
         var videoId = videoUrlParser.parse(url);
         var userId = sessionStorage.userId;
-        var category = $('#category').val();
+        var category = $('#category').val()  || 'Other';
 
         ajaxRequester.createVideo(userId, videoId, category, videoStorage.setVideoId);
 

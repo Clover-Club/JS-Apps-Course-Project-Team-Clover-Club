@@ -7,7 +7,7 @@ var videoUrlParser = (function() {
             videoId = videoId.substring(0, ampersandPosition);
         }
 
-        return videoId
+        return videoId;
     }
 
     return {
