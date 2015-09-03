@@ -64,7 +64,7 @@ var ajaxRequester = (function() {
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
-            toastr.warning('Please, try again', 'Missed something')
+            toastr.warning('Please, try again', 'Missed something');
             return;
         }
 

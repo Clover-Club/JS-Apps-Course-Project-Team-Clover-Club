@@ -101,9 +101,6 @@ var authentication = (function () {
         if (validator.registerPassword) {
             var username = $('#username').val(),
                 password = $('#pass').val();
-            if(username === undefined || password === undefined || username === "" || password === ""){
-                errorRegister()
-            }
 
             ajaxRequester.register(username, password, authenticationSuccessForRegistering, errorRegister);
         }
