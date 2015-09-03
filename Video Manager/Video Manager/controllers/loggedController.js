@@ -1,4 +1,4 @@
-var loggedController = (function () {
+var loggedController = (function() {
     var videos;
     validator.changeNavbar(sessionStorage.currentUser);
 
@@ -14,7 +14,7 @@ var loggedController = (function () {
             value: 'all',
             text: 'All'
         }));
-        $.each(allCategories, function (i, category) {
+        $.each(allCategories, function(i, category) {
             category = $(category);
             $('#category-options').append($('<option>', {
                 value: category.html().toLowerCase(),
@@ -25,22 +25,21 @@ var loggedController = (function () {
 
     ajaxRequester.getVideos(sessionStorage.userId, showAllVideosInCategories);
 
-    $('#show-form-btn').on('click', function () {
+    $('#show-form-btn').on('click', function() {
         var category = $("#category-options option:selected").text();
         if (category !== 'All') {
             $('#users-videos').html('');
-            var filtered = _.filter(videos, function (video) {
+            var filtered = _.filter(videos, function(video) {
                 return video.category == category;
             });
 
             if (filtered.length !== 0) {
-                _.each(filtered, function (video) {
+                _.each(filtered, function(video) {
                     videoRenderer.renderSingleVideo($('#users-videos'), video);
                 });
                 $('#users-videos').prepend($('<h4 />').text(category).addClass('categories'));
             }
-        }
-        else {
+        } else {
             location.href = '#/logged';
         }
     });
@@ -49,9 +48,9 @@ var loggedController = (function () {
         videos = data.results;
         var groupedVideos = _.groupBy(videos, 'category');
         $('#users-videos').html('');
-        _.each(groupedVideos, function (value, key) {
+        _.each(groupedVideos, function(value, key) {
             var list = $('<div />').text(key).attr('id', key.toLowerCase());
-            _.each(value, function (video) {
+            _.each(value, function(video) {
                 videoRenderer.renderSingleVideo($('#users-videos'), video);
             });
 
@@ -65,13 +64,13 @@ var loggedController = (function () {
                     .css("box-shadow", "7px 7px 4px #1d2428")
                     .css("font-family", "'Ubuntu', sans-serif;")
                     .text(key))
-                    .css("color", "#faebb8");
+                .css("color", "#faebb8");
         });
 
         showCategoryOptions();
     }
 
-    $('#add-form-btn').click(function () {
+    $('#add-form-btn').click(function() {
         var hasThisCategory = false;
 
         location.href = '#/logged';
@@ -81,7 +80,7 @@ var loggedController = (function () {
             userId = sessionStorage.userId,
             category = $('#category').val() || 'Other';
 
-        $("#category-options > option").each(function () {
+        $("#category-options > option").each(function() {
             if (this.text === category) {
                 hasThisCategory = true;
                 return;
@@ -95,7 +94,7 @@ var loggedController = (function () {
             }));
         }
 
-        if(videoId === "" || videoId === undefined){
+        if (videoId === "" || videoId === undefined) {
             toastr.options = {
                 "closeButton": true,
                 "debug": false,
@@ -113,7 +112,7 @@ var loggedController = (function () {
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
-            
+
             toastr.warning('Please, try again', 'Missed something');
             return;
         }
@@ -123,6 +122,13 @@ var loggedController = (function () {
         var videoIdInDatabase = sessionStorage.currentAddedVideo;
 
         ajaxRequester.getVideos(userId, showAllVideosInCategories);
+    });
+
+    $('#users-videos').on('click', '.delete-btn', function() {
+        var id = $(this).parent().children(':first-child').attr('id'),
+            userId = sessionStorage.userId;
+
+        ajaxRequester.deleteVideo(id, $(this).parent().hide());
     });
 
     location.href = '#/logged';

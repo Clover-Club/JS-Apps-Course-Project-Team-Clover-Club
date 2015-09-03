@@ -38,7 +38,13 @@ var videoRenderer = (function () {
         function createPlayer(video) {
             var div = $('<div>');
             div.attr('id', video.objectId);
-            container.prepend(div);
+            var outerDiv = $('<div>');
+            outerDiv.attr('class', 'video-container-div');
+            var btn = $('<button>').html('Delete video');
+            btn.attr('class', 'delete-btn');
+            outerDiv.append(div);
+            outerDiv.append(btn);
+            container.prepend(outerDiv);
             return new YT.Player(video.objectId, {
                 height: PLAYER_HEIGHT,
                 width: PLAYER_WIDTH,
