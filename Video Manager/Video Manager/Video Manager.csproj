@@ -63,6 +63,7 @@
     <Content Include="controllers\loggedController.js" />
     <Content Include="controllers\loginController.js" />
     <Content Include="controllers\registerController.js" />
+    <Content Include="imgs\git.png" />
     <Content Include="imgs\youtube.png" />
     <Content Include="libs\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="libs\bootstrap\dist\css\bootstrap-theme.min.css" />
@@ -1117,6 +1118,7 @@
     <Content Include="partials\logged.partial.html" />
     <Content Include="partials\login.partial.html" />
     <Content Include="partials\register.partial.html" />
+    <Content Include="partials\successRegister.partial.html" />
     <Content Include="scripts\ajaxRequester.js" />
     <Content Include="scripts\authentication.js" />
     <Content Include="scripts\contactUsDraggable.js" />

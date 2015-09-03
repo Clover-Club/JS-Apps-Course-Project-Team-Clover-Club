@@ -42,7 +42,7 @@ var ajaxRequester = (function() {
                 className: "_User",
                 objectId: userId
             },
-            category: providedCategory
+            category: providedCategory || 'Other'
         };
 
         jQuery.ajax({
