@@ -18,8 +18,8 @@ var authentication = (function () {
         // TODO: error message
     }
 
-    function authenticationSuccessForRegistering(data) {
-        alert('Congratulations! You can now log in in your account!')
+    function authenticationSuccessForRegistering() {
+        location.href = '#/successRegister';
     }
 
     function login() {

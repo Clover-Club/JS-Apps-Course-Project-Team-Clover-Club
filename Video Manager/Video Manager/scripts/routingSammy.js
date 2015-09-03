@@ -25,6 +25,11 @@ function sammy() {
 
         });
 
+        this.get('#/successRegister', function () {
+            //this.redirect('#/home');
+            $('#content').load('./partials/successRegister.partial.html');
+        });
+
     });
 
     $(function () {

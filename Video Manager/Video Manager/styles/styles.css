@@ -1,12 +1,4 @@
-﻿#user-name {
-    display: none;
-}
-
-#logout {
-    display: none;
-}
-
-.buttons {
+﻿.buttons {
     text-align: center;
 }
 
@@ -17,10 +9,6 @@ h5:hover {
 
 .btn {
     display: inline-block;
-}
-
-.h3 {
-    margin-left: 50px;
 }
 
 .h2 {
@@ -41,15 +29,7 @@ h5:hover {
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 10px;
-    border-radius: 15px;
-}
-
-li {
-    margin: 10px;
-    padding: 10px;
+    padding: 6px;
     border-radius: 15px;
 }
 
@@ -70,16 +50,9 @@ iframe {
     width: 100%;
 }
 
-#login {
-    margin: 10px;
+#login,#contacts {
+    margin: 5px;
     font-weight: bold;
-
-}
-
-#contacts {
-    margin: 10px;
-    font-weight: bold;
-
 }
 
 #welcome, #members {
@@ -100,4 +73,22 @@ iframe {
     margin: 10px;
     color: white;
     text-shadow: 2px 2px 4px #000000;
+}
+
+#greeting-span{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1em;
+    color:#00b3ee;
+}
+
+#user-name{
+    font-family: 'Ubuntu', sans-serif;
+    color:#00b3ee;
+    font-weight: bold;
+}
+
+#logout{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+
 }
