@@ -10,11 +10,30 @@ var authentication = (function () {
 
         $('#logout').show();
 
+        successLogin();
+
         setSessionStorage(data);
     }
 
-    function authenticationFailed(error) {
-        errorLogin();
+    function successLogin() {
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "200",
+            "hideDuration": "3000",
+            "timeOut": "2000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+        toastr.success('Login Successed', 'Welcome :)')
     }
 
     function errorLogin(){
@@ -59,6 +78,14 @@ var authentication = (function () {
         toastr.warning('Please, try again','Missed something')
     }
 
+    function authenticationFailed(error) {
+        errorLogin();
+    }
+
+    function errorForRegister(error) {
+        errorRegister();
+    }
+
     function authenticationSuccessForRegistering() {
         location.href = '#/successRegister';
     }
@@ -78,7 +105,7 @@ var authentication = (function () {
                 errorRegister()
             }
 
-            ajaxRequester.register(username, password, authenticationSuccessForRegistering, authenticationFailed);
+            ajaxRequester.register(username, password, authenticationSuccessForRegistering, errorRegister);
         }
     }
 
