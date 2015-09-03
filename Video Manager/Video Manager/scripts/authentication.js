@@ -9,9 +9,7 @@ var authentication = (function () {
         location.href = '#/logged';
 
         $('#logout').show();
-
         successLogin();
-
         setSessionStorage(data);
     }
 
@@ -33,7 +31,8 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.success('Login Successed', 'Welcome :)')
+
+        toastr.success('Login Successed', 'Welcome :)');
     }
 
     function errorLogin(){
@@ -54,7 +53,8 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.error('Please, try again','Wrong name or password')
+
+        toastr.error('Please, try again','Wrong name or password');
     }
 
     function errorRegister(){
@@ -75,7 +75,8 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.warning('Please, try again','Missed something')
+
+        toastr.warning('Please, try again','Missed something');
     }
 
     function authenticationFailed(error) {
@@ -102,7 +103,7 @@ var authentication = (function () {
             var username = $('#username').val(),
                 password = $('#pass').val();
             if(username === undefined || password === undefined || username === "" || password === ""){
-                errorRegister()
+                errorRegister();
             }
 
             ajaxRequester.register(username, password, authenticationSuccessForRegistering, errorRegister);

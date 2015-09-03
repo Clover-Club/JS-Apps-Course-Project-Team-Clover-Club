@@ -4,7 +4,7 @@
 
 Please define and implement the following assets in your project:
 
-- Use jQuery
+- DONE Use jQuery
 - Implement OOP design
     - Application logic using objects, modules and data hiding
         - Both Prototypal and classical inheritances are Ok
