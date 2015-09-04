@@ -15,6 +15,10 @@
     width: 100%;
 }
 
+#add-videos-div{
+    margin-top: -10px;
+}
+
 #left{
     margin-left: 250px;
     font-family: 'Ubuntu', sans-serif;

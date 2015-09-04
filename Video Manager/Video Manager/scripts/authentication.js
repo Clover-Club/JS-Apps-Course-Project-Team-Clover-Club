@@ -17,7 +17,7 @@ var authentication = (function () {
 
     function successLogin() {
         toastr.options = {
-            "closeButton": true,
+            "closeButton": false,
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,
@@ -59,7 +59,7 @@ var authentication = (function () {
 
     function errorRegister(message) {
         toastr.options = {
-            "closeButton": true,
+            "closeButton": false,
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,
@@ -80,7 +80,7 @@ var authentication = (function () {
 
     function logOutGreeting(){
         toastr.options = {
-            "closeButton": true,
+            "closeButton": false,
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,
