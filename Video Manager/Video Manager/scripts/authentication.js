@@ -86,7 +86,8 @@ var authentication = (function () {
         var username = $('#usr').val(),
                 password = $('#pwd').val();
         try {
-            validator.validateUsernameAndPassword(username, password);
+            validator.validateUsername(username);
+            validator.validatePassword(password);
         } catch (error) {
             errorLogin(error.message);
             return;
@@ -99,8 +100,9 @@ var authentication = (function () {
             password = $('#pass').val(),
             confirmationPassword = $('#pass-repeat').val();
         try {
-            validator.validateUsernameAndPassword(username, password);
-            validator.checkPasswordConfirmation(password, confirmationPassword);
+            validator.validateUsername(username);
+            validator.validatePassword(password);
+            validator.validatePasswordConfirmation(password, confirmationPassword);
         } catch (error) {
             errorRegister(error.message);
             return;

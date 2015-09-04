@@ -1,9 +1,4 @@
 var validator = (function () {
-    function validateUsernameAndPassword(username, password) {
-        validateUsername(username);
-        validatePassword(password);
-    }
-
     function validatePasswordConfirmation(password, confirmationPassword) {
         validatePassword(password);
         if (password !== confirmationPassword) {
@@ -40,8 +35,9 @@ var validator = (function () {
     }
 
     return {
-        validateUsernameAndPassword: validateUsernameAndPassword,
         validatePasswordConfirmation: validatePasswordConfirmation,
+        validateUsername: validateUsername,
+        validatePassword: validatePassword,
         changeNavbar: changeNavbar
     };
 }());
