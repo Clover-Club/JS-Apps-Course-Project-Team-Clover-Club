@@ -4,7 +4,7 @@ var validator = (function () {
         validatePassword(password);
     }
 
-    function checkPasswordConfirmation(password, confirmationPassword) {
+    function validatePasswordConfirmation(password, confirmationPassword) {
         validatePassword(password);
         if (password !== confirmationPassword) {
             throw new Error('Passwords validation failed.');
@@ -12,13 +12,13 @@ var validator = (function () {
     }
 
     function validateUsername(username) {
-        if (typeof username !== 'string' || !/\w{3,}/.test(username)) {
+        if (typeof username !== 'string' || !/^\w{3,}$/.test(username)) {
             throw new Error('The username contains either invalid character or is too short.');
         }
     }
 
     function validatePassword(password) {
-        if (typeof password !== 'string' || !password || !/[\w!@#$%^&*]{3,}/.test(password)) {
+        if (typeof password !== 'string' || !password || !/^[\w!@#$%^&*]{3,}$/.test(password)) {
             throw new Error('The password contains either invalid character or is too short.');
         }
     }
@@ -41,7 +41,9 @@ var validator = (function () {
 
     return {
         validateUsernameAndPassword: validateUsernameAndPassword,
-        checkPasswordConfirmation: checkPasswordConfirmation,
+        validatePasswordConfirmation: validatePasswordConfirmation,
         changeNavbar: changeNavbar
     };
 }());
+
+module.exports = validator;
