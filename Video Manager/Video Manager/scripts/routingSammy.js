@@ -1,6 +1,3 @@
-/**
- * Created by Ивайло on 2.9.2015 г..
- */
 function sammy() {
     var sammyApp = Sammy('#content', function () {
 
@@ -26,10 +23,8 @@ function sammy() {
         });
 
         this.get('#/successRegister', function () {
-            //this.redirect('#/home');
             $('#content').load('./partials/successRegister.partial.html');
         });
-
     });
 
     $(function () {

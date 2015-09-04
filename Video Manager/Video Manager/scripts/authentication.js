@@ -75,7 +75,29 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.warning('Please, try again','Missed something')
+        toastr.error('Please, try again','Missed something')
+    }
+
+    function logOutGreeting(){
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "200",
+            "hideDuration": "3000",
+            "timeOut": "2000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        toastr.info('Goodbuy, See you again !');
     }
 
     function authenticationFailed(error) {
@@ -112,8 +134,7 @@ var authentication = (function () {
         delete sessionStorage.userId;
         delete sessionStorage.currentAddedVideo;
 
-        var containter = $('#users-videos');
-        containter.html('');
+        logOutGreeting();
     }
 
     return {

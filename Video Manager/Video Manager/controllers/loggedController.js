@@ -1,3 +1,4 @@
+
 var loggedController = (function () {
     var videos;
     validator.changeNavbar(sessionStorage.currentUser);

@@ -1,6 +1,3 @@
-/**
- * Created by Ивайло on 31.8.2015 г..
- */
 $(function () {
     $("#sortable").sortable({
         revert: true

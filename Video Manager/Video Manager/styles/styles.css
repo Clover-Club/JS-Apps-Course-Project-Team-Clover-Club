@@ -104,6 +104,13 @@ iframe {
     text-shadow: 2px 2px 4px #000000;
 }
 
+#fb{
+    position: fixed;
+    top:580px;
+    right: 60px;
+}
+
+
 #greeting-span{
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.2em;
