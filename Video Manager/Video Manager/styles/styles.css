@@ -131,6 +131,16 @@ iframe {
     margin: 4px;
 }
 
+.delete-btn{
+    /*display: none;*/
+}
+
+.video-container-div{
+    width: 250px;
+    display: inline-block;
+    margin: 15px;
+}
+
 #profile{
     margin-left: 50px;
 }

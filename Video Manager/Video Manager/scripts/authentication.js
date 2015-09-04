@@ -149,7 +149,6 @@ var authentication = (function () {
 
         logOutGreeting();
     }
-
     return {
         login: login,
         register: register,

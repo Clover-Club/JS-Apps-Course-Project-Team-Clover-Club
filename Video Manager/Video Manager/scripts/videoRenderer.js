@@ -20,11 +20,13 @@ var videoRenderer = (function () {
             var div = $('<div>');
             div.attr('id', videos.objectId);
             container.prepend(div);
+
             return new YT.Player(videos.objectId, {
                 height: PLAYER_HEIGHT,
                 width: PLAYER_WIDTH,
                 videoId: videos.videoId
             });
+
         }
 
         onYouTubeIframeAPIReady();
@@ -38,20 +40,29 @@ var videoRenderer = (function () {
         function createPlayer(video) {
             var div = $('<div>');
             div.attr('id', video.objectId);
+
+            var btn = $('<button>')
+                .attr('type', 'button')
+                .attr('display', 'inline-block')
+                .html('Delete')
+                .attr("id","button-delete");
+                //.css("display","none");
+
+                btn.attr('class', 'delete-btn')
+                .addClass('btn-danger').addClass('btn');
+
             var outerDiv = $('<div>');
             outerDiv.attr('class', 'video-container-div');
-            var btn = $('<button>').html('Delete video');
-            btn.attr('class', 'delete-btn');
             outerDiv.append(div);
             outerDiv.append(btn);
             container.prepend(outerDiv);
+
             return new YT.Player(video.objectId, {
                 height: PLAYER_HEIGHT,
                 width: PLAYER_WIDTH,
                 videoId: video.videoId
             });
         }
-
         onYouTubeIframeAPIReady();
     }
 
@@ -60,3 +71,27 @@ var videoRenderer = (function () {
         renderSingleVideo: renderSingleVideo
     };
 })();
+
+$(".video-container-div").on('click',function(){
+    $(this).children().last().css("display","inline");
+    $(this).childNodes().last().css("display","inline");
+
+    console.log(555);
+});
+
+$('iframe').load(function(){
+    $(this).contents().find("body").on('click', function(event) { console.log(444)});
+});
+
+$('iframe').load(function(){
+    $(this).contents().find("body").on('click', function(event) { alert('test'); });
+});
+
+//var rightSideBoxes = document.getElementById("users-videos");
+//rightSideBoxes.addEventListener('mouseover', function(ev){
+//    var target = ev.target;
+//    if(target.nodeName == 'IFRAME'){
+//        target.nextElementSibling.style.display = 'inline-block';
+//        target.style.cursor = 'pointer';
+//    }
+//},false);
