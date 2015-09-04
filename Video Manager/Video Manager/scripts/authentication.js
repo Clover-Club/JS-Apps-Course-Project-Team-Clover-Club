@@ -38,7 +38,7 @@ var authentication = (function () {
 
     function errorLogin(message) {
         toastr.options = {
-            "closeButton": true,
+            "closeButton": false,
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,

@@ -96,7 +96,7 @@ var loggedController = (function() {
 
         if (videoId === "" || videoId === undefined) {
             toastr.options = {
-                "closeButton": true,
+                "closeButton": false,
                 "debug": false,
                 "newestOnTop": false,
                 "progressBar": true,
