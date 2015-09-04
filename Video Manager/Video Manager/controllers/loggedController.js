@@ -1,4 +1,4 @@
-var loggedController = (function () {
+var loggedController = (function() {
     var videos;
     validator.changeNavbar(sessionStorage.currentUser);
 
@@ -14,7 +14,7 @@ var loggedController = (function () {
             value: 'all',
             text: 'All'
         }));
-        $.each(allCategories, function (i, category) {
+        $.each(allCategories, function(i, category) {
             category = $(category);
             $('#category-options').append($('<option>', {
                 value: category.html().toLowerCase(),
@@ -25,16 +25,16 @@ var loggedController = (function () {
 
     ajaxRequester.getVideos(sessionStorage.userId, showAllVideosInCategories);
 
-    $('#show-form-btn').on('click', function () {
+    $('#show-form-btn').on('click', function() {
         var category = $("#category-options option:selected").text();
         if (category !== 'All') {
             $('#users-videos').html('');
-            var filtered = _.filter(videos, function (video) {
+            var filtered = _.filter(videos, function(video) {
                 return video.category == category;
             });
 
             if (filtered.length !== 0) {
-                _.each(filtered, function (video) {
+                _.each(filtered, function(video) {
                     videoRenderer.renderSingleVideo($('#users-videos'), video);
                 });
                 $('#users-videos').prepend($('<h4 />').text(category).addClass('categories'));
@@ -48,9 +48,9 @@ var loggedController = (function () {
         videos = data.results;
         var groupedVideos = _.groupBy(videos, 'category');
         $('#users-videos').html('');
-        _.each(groupedVideos, function (value, key) {
+        _.each(groupedVideos, function(value, key) {
             var list = $('<div />').text(key).attr('id', key.toLowerCase());
-            _.each(value, function (video) {
+            _.each(value, function(video) {
                 videoRenderer.renderSingleVideo($('#users-videos'), video);
             });
 
@@ -70,7 +70,7 @@ var loggedController = (function () {
         showCategoryOptions();
     }
 
-    $('#add-form-btn').click(function () {
+    $('#add-form-btn').click(function() {
         var hasThisCategory = false;
 
         location.href = '#/logged';
@@ -80,7 +80,7 @@ var loggedController = (function () {
             userId = sessionStorage.userId,
             category = $('#category').val() || 'Other';
 
-        $("#category-options > option").each(function () {
+        $("#category-options > option").each(function() {
             if (this.text === category) {
                 hasThisCategory = true;
                 return;
@@ -123,11 +123,32 @@ var loggedController = (function () {
 
         ajaxRequester.getVideos(userId, showAllVideosInCategories);
     });
-    $('#users-videos').on('click', '.delete-btn', function () {
+
+    function updateVideosAndCategory(button) {
+        button.parent().remove();
+        var elements = $('#users-videos').children();
+
+        if(elements.length === 1) {
+            elements[0].remove();
+            return;
+        }
+
+        for (var i = 0, len = elements.length; i < len; i += 1) {
+            if (elements[i].nodeName === 'H4') {
+                if (elements[i + 1].nodeName === 'H4') {
+                    elements[i].remove();
+                    return;
+                }
+            }
+        }
+    }
+
+    $('#users-videos').on('click', '.delete-btn', function() {
         var id = $(this).parent().children(':first-child').attr('id'),
             userId = sessionStorage.userId;
 
-        ajaxRequester.deleteVideo(id, $(this).parent().hide());
+        ajaxRequester.deleteVideo(id, updateVideosAndCategory($(this)));
+        // ajaxRequester.deleteVideo(id, $(this).parent().remove());
     });
 
     location.href = '#/logged';
