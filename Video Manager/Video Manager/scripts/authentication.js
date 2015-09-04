@@ -33,10 +33,10 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.success('Login Succeeded', 'Welcome :)')
+        toastr.success('Login Succeeded', 'Welcome :)');
     }
 
-    function errorLogin(){
+    function errorLogin(message) {
         toastr.options = {
             "closeButton": true,
             "debug": false,
@@ -54,10 +54,10 @@ var authentication = (function () {
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-        toastr.error('Please, try again','Wrong name or password')
+        toastr.error('Please, try again', (typeof message === 'string') ? message: 'Wrong name or password');
     }
 
-    function errorRegister(){
+    function errorRegister(message) {
         toastr.options = {
             "closeButton": true,
             "debug": false,
@@ -106,6 +106,7 @@ var authentication = (function () {
 
     function errorForRegister(error) {
         errorRegister();
+        toastr.warning('Please, try again', (typeof message === 'string') ? message : 'Missed something');
     }
 
     function authenticationSuccessForRegistering() {
@@ -114,18 +115,30 @@ var authentication = (function () {
 
     function login() {
         var username = $('#usr').val(),
-            password = $('#pwd').val();
-
-        ajaxRequester.login(username, password, authenticationSuccessForLogin, authenticationFailed);
+                password = $('#pwd').val();
+        try {
+            validator.validateUsername(username);
+            validator.validatePassword(password);
+        } catch (error) {
+            errorLogin(error.message);
+            return;
+        }
+        ajaxRequester.login(username, password, authenticationSuccessForLogin, errorLogin);
     }
 
     function register() {
-        if (validator.registerPassword) {
-            var username = $('#username').val(),
-                password = $('#pass').val();
-
-            ajaxRequester.register(username, password, authenticationSuccessForRegistering, errorRegister);
+        var username = $('#username').val(),
+            password = $('#pass').val(),
+            confirmationPassword = $('#pass-repeat').val();
+        try {
+            validator.validateUsername(username);
+            validator.validatePassword(password);
+            validator.validatePasswordConfirmation(password, confirmationPassword);
+        } catch (error) {
+            errorRegister(error.message);
+            return;
         }
+        ajaxRequester.register(username, password, authenticationSuccessForRegistering, errorRegister);
     }
 
     function logout() {

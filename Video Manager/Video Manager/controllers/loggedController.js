@@ -1,4 +1,3 @@
-
 var loggedController = (function () {
     var videos;
     validator.changeNavbar(sessionStorage.currentUser);
@@ -40,8 +39,7 @@ var loggedController = (function () {
                 });
                 $('#users-videos').prepend($('<h4 />').text(category).addClass('categories'));
             }
-        }
-        else {
+        } else {
             location.href = '#/logged';
         }
     });
@@ -66,7 +64,7 @@ var loggedController = (function () {
                     .css("box-shadow", "7px 7px 4px #1d2428")
                     .css("font-family", "'Ubuntu', sans-serif;")
                     .text(key))
-                    .css("color", "#faebb8");
+                .css("color", "#faebb8");
         });
 
         showCategoryOptions();
@@ -96,7 +94,7 @@ var loggedController = (function () {
             }));
         }
 
-        if(videoId === "" || videoId === undefined){
+        if (videoId === "" || videoId === undefined) {
             toastr.options = {
                 "closeButton": true,
                 "debug": false,
@@ -114,7 +112,7 @@ var loggedController = (function () {
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
-            
+
             toastr.warning('Please, try again', 'Missed something');
             return;
         }
@@ -125,4 +123,12 @@ var loggedController = (function () {
 
         ajaxRequester.getVideos(userId, showAllVideosInCategories);
     });
+    $('#users-videos').on('click', '.delete-btn', function () {
+        var id = $(this).parent().children(':first-child').attr('id'),
+            userId = sessionStorage.userId;
+
+        ajaxRequester.deleteVideo(id, $(this).parent().hide());
+    });
+
+    location.href = '#/logged';
 })();

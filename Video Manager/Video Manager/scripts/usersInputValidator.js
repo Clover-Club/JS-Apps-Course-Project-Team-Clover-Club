@@ -1,13 +1,21 @@
 var validator = (function () {
-    function registerPassword() {
-        var password = $('#pass'),
-            repatedPassword = $('#pass-repeat');
-
-        if (password === repatedPassword) {
-            return true;
+    function validatePasswordConfirmation(password, confirmationPassword) {
+        validatePassword(password);
+        if (password !== confirmationPassword) {
+            throw new Error('Passwords validation failed.');
         }
+    }
 
-        return false;
+    function validateUsername(username) {
+        if (typeof username !== 'string' || !/^\w{3,}$/.test(username)) {
+            throw new Error('The username contains either invalid character or is too short.');
+        }
+    }
+
+    function validatePassword(password) {
+        if (typeof password !== 'string' || !password || !/^[\w!@#$%^&*]{3,}$/.test(password)) {
+            throw new Error('The password contains either invalid character or is too short.');
+        }
     }
 
     function changeNavbar(isLoggedIn) {
@@ -27,7 +35,11 @@ var validator = (function () {
     }
 
     return {
-        registerPassword: registerPassword,
+        validatePasswordConfirmation: validatePasswordConfirmation,
+        validateUsername: validateUsername,
+        validatePassword: validatePassword,
         changeNavbar: changeNavbar
     };
 }());
+
+module.exports = validator;
