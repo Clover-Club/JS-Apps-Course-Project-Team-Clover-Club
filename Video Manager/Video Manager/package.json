@@ -6,12 +6,13 @@
   "dependencies": {
     "babel-core": "^5.8.23",
     "http-server": "^0.8.0",
+    "mocha": "^2.3.0",
     "systemjs": "^0.18.17"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node ./node_modules/http-server/bin/http-server -p 8888"
+    "start": "node ./node_modules/http-server/bin/http-server -p 8888"
   },
   "author": "",
   "license": "ISC"

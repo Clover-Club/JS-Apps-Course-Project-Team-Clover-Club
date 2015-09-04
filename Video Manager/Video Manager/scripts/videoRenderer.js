@@ -45,10 +45,10 @@ var videoRenderer = (function () {
                 .attr('type', 'button')
                 .attr('display', 'inline-block')
                 .html('Delete')
-                .attr("id","button-delete");
-                //.css("display","none");
+                .attr("id", "button-delete");
+            //.css("display","none");
 
-                btn.attr('class', 'delete-btn')
+            btn.attr('class', 'delete-btn')
                 .addClass('btn-danger').addClass('btn');
 
             var outerDiv = $('<div>');
@@ -63,6 +63,7 @@ var videoRenderer = (function () {
                 videoId: video.videoId
             });
         }
+
         onYouTubeIframeAPIReady();
     }
 
@@ -72,26 +73,3 @@ var videoRenderer = (function () {
     };
 })();
 
-$(".video-container-div").on('click',function(){
-    $(this).children().last().css("display","inline");
-    $(this).childNodes().last().css("display","inline");
-
-    console.log(555);
-});
-
-$('iframe').load(function(){
-    $(this).contents().find("body").on('click', function(event) { console.log(444)});
-});
-
-$('iframe').load(function(){
-    $(this).contents().find("body").on('click', function(event) { alert('test'); });
-});
-
-//var rightSideBoxes = document.getElementById("users-videos");
-//rightSideBoxes.addEventListener('mouseover', function(ev){
-//    var target = ev.target;
-//    if(target.nodeName == 'IFRAME'){
-//        target.nextElementSibling.style.display = 'inline-block';
-//        target.style.cursor = 'pointer';
-//    }
-//},false);

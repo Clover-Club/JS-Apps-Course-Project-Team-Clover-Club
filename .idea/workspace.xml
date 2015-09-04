@@ -45,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/scripts/videoRenderer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="45" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="45" />
+              <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -84,8 +84,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.066667">
-              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+            <state vertical-scroll-proportion="-5.7">
+              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -116,8 +116,8 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/styles/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61456484">
-              <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.33570158">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -150,10 +150,10 @@
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/scripts/systemConfig.js" />
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/scripts/fbButtons.js" />
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/partials/home.partial.html" />
-        <option value="$PROJECT_DIR$/Video Manager/Video Manager/index.html" />
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/controllers/loggedController.js" />
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/scripts/authentication.js" />
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/scripts/videoRenderer.js" />
+        <option value="$PROJECT_DIR$/Video Manager/Video Manager/index.html" />
         <option value="$PROJECT_DIR$/Video Manager/Video Manager/styles/styles.css" />
       </list>
     </option>
@@ -793,14 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.066667">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/controllers/loggedController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -844,15 +836,23 @@
     <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/scripts/videoRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="45" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="45" />
+          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.7">
+          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Video Manager/Video Manager/styles/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61456484">
-          <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.33570158">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
