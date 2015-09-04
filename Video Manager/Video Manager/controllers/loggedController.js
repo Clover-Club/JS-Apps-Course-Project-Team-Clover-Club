@@ -149,6 +149,7 @@ var loggedController = (function() {
 
         ajaxRequester.deleteVideo(id, updateVideosAndCategory($(this)));
         // ajaxRequester.deleteVideo(id, $(this).parent().remove());
+        showCategoryOptions();
     });
 
     location.href = '#/logged';
