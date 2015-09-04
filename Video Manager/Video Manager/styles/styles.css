@@ -30,6 +30,8 @@ h5:hover {
 
 .h2 {
     text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 .h4 {
@@ -88,6 +90,10 @@ iframe {
 #welcome h2, h4 {
     font-family: 'Ubuntu', sans-serif;
 }
+#welcome h2{
+    color: coral;
+
+}
 
 #home {
     font-family: 'Ubuntu', sans-serif;
@@ -118,15 +124,35 @@ iframe {
     margin: 4px;
 }
 
+#profile{
+    margin-left: 50px;
+}
+
+#listVideos a{
+    display: inline-block;
+}
+
+#add-videos-div{
+    display: none;
+}
+#add-videos-div a,input{
+    display: inline;
+}
+
 #sortable li{
     font-family: 'Ubuntu', sans-serif;
     padding: 6px;
     margin: 10px;
     border-radius: 8px;
 }
+label{
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+
+}
 
 #sortable li div{
     font-family: 'Ubuntu', sans-serif;
-    color: orangered;
+    color: coral;
 
 }
