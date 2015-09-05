@@ -3,7 +3,7 @@ var path = require('path');
 var app = express();
 
 //app.use(express.static(__dirname)); // Current directory is root
-app.use(express.static(path.join(__dirname, 'Source')));
+app.use(express.static(path.join(__dirname, 'Video Manager')));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
