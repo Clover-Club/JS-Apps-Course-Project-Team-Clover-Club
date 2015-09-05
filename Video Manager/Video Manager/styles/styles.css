@@ -172,6 +172,7 @@ iframe {
 #add-videos-div{
     display: none;
 }
+
 #add-videos-div a,input{
     display: inline;
 }
